@@ -30,6 +30,7 @@ const TodoList = () => {
   return (
     <div className="todo-container">
       <h2>To-Do List</h2>
+      <h2>To-Do List</h2>
       <div className="input-container">
         <input
           type="text"
