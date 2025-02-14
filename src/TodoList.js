@@ -10,7 +10,7 @@ const TodoList = () => {
     if (task.trim() === "") {
       return;
     }
-    setTasks([...tasks, { text: task, completed: false }]);
+    setTasks(prevTasks => [...prevTasks, { text: task, completed: false }]);
     setTask("");
   };
 
