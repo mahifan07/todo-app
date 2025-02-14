@@ -10,13 +10,13 @@ const TodoList = () => {
     if (task.trim() === "") {
       return;
     }
-    setTasks([...tasks, ]);
+    setTasks([...tasks, { text: task, completed: false }]);
     setTask("");
   };
 
   const toggleTask = (index) => {
-    setTasks(
-      tasks.map((task, i) =>
+    setTasks((prevTasks) =>
+      prevTasks.map((task, i) =>
         i === index ? { ...task, completed: !task.completed } : task
       )
     );
@@ -24,7 +24,7 @@ const TodoList = () => {
 
   const removeTask = (index) => {
     console.log(index);
-    setTasks(tasks.filter((task, i) => i !== index));
+    setTasks((prevTask) => prevTask.filter((task, i) => i !== index));
   };
 
   return (
